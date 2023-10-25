@@ -8,12 +8,15 @@ def make_default_prefs(user_id):
     }
 
 
-store = None
+store = {}
 
 
 def get_prefs(user_id):
-    return store if store else make_default_prefs(user_id)
+    default_store = make_default_prefs(user_id)
+    return store.get(user_id, default_store) if store else default_store
+
 
 def set_prefs(user_id, data):
-    store = data
+    global store
+    store[user_id] = data
     return store

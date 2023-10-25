@@ -28,5 +28,5 @@ class TestGetUserConfig(unittest.TestCase):
         return
 
     def test_simple_get_user_prefs(self):
-        result = self.lambda_target_module.lambda_function({"user": "user1"}, {})
+        result = self.lambda_target_module.lambda_function({"user": "user1"}, {"context": True})
         self.assertTrue(result)
