@@ -14,12 +14,11 @@ sys.path.append(os.path.abspath(os.path.join(__file__,
 sys.path.append(os.path.abspath(os.path.join(__file__,
                                 "../../../../../../layers/stumc_core_library_module/src/test/python")))
 
-print(sys.path)
 
+class TestGetUserConfig(unittest.TestCase):
 
-class TestGetuserConfig(unittest.TestCase):
-
-    def _init__(self):
+    def _init__(self, *argv, **kwargs):
+        super(TestGetUserConfig, self).__init__(*argv, **kwargs)
         self.lambda_target_module = None
 
     def setUp(self) -> None:
@@ -29,5 +28,5 @@ class TestGetuserConfig(unittest.TestCase):
         return
 
     def test_simple_get_user_prefs(self):
-        result = self.lambda_target_module.lambda_function({"user":"user1"},{})
+        result = self.lambda_target_module.lambda_function({"user": "user1"}, {})
         self.assertTrue(result)

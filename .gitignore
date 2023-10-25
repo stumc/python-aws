@@ -239,3 +239,5 @@ fabric.properties
 
 # ignore tmp file and folders
 _tmp_**
+lambdas/artifacts/**.zip
+

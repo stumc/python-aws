@@ -14,8 +14,8 @@ from stumc_core_library.user_prefs.dao import get_prefs
 
 class TestCoreLibrary(unittest.TestCase):
 
-    def _init__(self):
-        pass
+    def _init__(self, *argv,**kwargs):
+        super(TestCoreLibrary,self).__init__(*argv, **kwargs)
 
     def setUp(self) -> None:
         pass
