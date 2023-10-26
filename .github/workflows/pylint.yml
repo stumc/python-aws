@@ -26,7 +26,7 @@ jobs:
         ./lambdas/build/unittest.sh
     - name: Show Code Coverage Report
       run: |
-        coverage report -m
+        ./lambdas/build/code_coverage_report.sh
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
