@@ -22,8 +22,10 @@ jobs:
       run: |
         ./lambdas/build/package.sh
     - name: Run Unit Tests
-      run: |
+      run: |        
         ./lambdas/build/unittest.sh
+        ls -la lambdas/
+        ./lambdas/build/code_coverage_report.sh
     - name: Show Code Coverage Report
       run: |
         ./lambdas/build/code_coverage_report.sh

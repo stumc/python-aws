@@ -6,6 +6,8 @@ SCRIPT_EXIT_CODES=0
 
 use_virtual_env
 
+cd $LAMBDA_DIRECTORY
+
 python -m coverage report -m
 exit $?
 
