@@ -39,10 +39,11 @@ build_linux_all_layer_module_zip ( ) {
   (cd $LAMBDA_DIRECTORY/layers/_tmp_${this_module}${this_module_suffix}_py${PYTHON_VERSION}_module && $zip -r $LAMBDA_DIRECTORY/layers/_tmp_${this_module}${this_module_suffix}_py${PYTHON_VERSION}_layer.zip . )
   BUILD_LAYER_MODULE_ZIP_EXIT_CODES+=$?
 
+  rm -rf $LAMBDA_DIRECTORY/layers/_tmp_${this_module}${this_module_suffix}_py${PYTHON_VERSION}_module
 
   unzip -l $LAMBDA_DIRECTORY/layers/_tmp_${this_module}${this_module_suffix}_py${PYTHON_VERSION}_layer.zip
 
-  mv $LAMBDA_DIRECTORY/layers/_tmp_${this_module}${this_module_suffix}_py${PYTHON_VERSION}_layer.zip $LAMBDA_DIRECTORY/artifacts/
+  mv $LAMBDA_DIRECTORY/layers/_tmp_${this_module}${this_module_suffix}_py${PYTHON_VERSION}_layer.zip $LAMBDA_DIRECTORY/../artifacts/
   return $BUILD_LAYER_MODULE_ZIP_EXIT_CODES
 
 }

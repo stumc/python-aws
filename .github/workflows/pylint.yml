@@ -32,4 +32,4 @@ jobs:
         ./lambdas/build/code_profiling_report.sh
     - name: Analysing the code with pylint
       run: |
-        pylint --exit-zero $(git ls-files '*.py')
+        pylint --exit-zero --recursive yes lambdas/applications/* lambdas/layers/*
