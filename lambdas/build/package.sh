@@ -12,11 +12,11 @@ $SCRIPT_DIRECTORY/download_python_binary_packages.sh
 SCRIPT_EXIT_CODES+=$?
 
 echo Packaging GetUserConfig
-( cd $LAMBDA_DIRECTORY/applications/GetUserConfig/src/main/python && $zip -r $LAMBDA_DIRECTORY/artifacts/GetUserConfig.zip .)
-( cd $LAMBDA_DIRECTORY/layers/stumc_core_library_module/src/main/python && $zip -r $LAMBDA_DIRECTORY/artifacts/GetUserConfig.zip .)
+( cd $LAMBDA_DIRECTORY/applications/GetUserConfig/src/main/python && $zip -r $LAMBDA_DIRECTORY/../artifacts/GetUserConfig.zip .)
+( cd $LAMBDA_DIRECTORY/layers/stumc_core_library_module/src/main/python && $zip -r $LAMBDA_DIRECTORY/../artifacts/GetUserConfig.zip .)
 
 echo Showing GetUserConfig.zip
-$unzip -l $LAMBDA_DIRECTORY/artifacts/GetUserConfig.zip
+$unzip -l $LAMBDA_DIRECTORY/../artifacts/GetUserConfig.zip
 SCRIPT_EXIT_CODES+=$?
 
 echo Packaging exit code is $SCRIPT_EXIT_CODES
