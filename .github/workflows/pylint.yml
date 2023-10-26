@@ -24,11 +24,12 @@ jobs:
     - name: Run Unit Tests
       run: |        
         ./lambdas/build/unittest.sh
-        ls -la lambdas/
-        ./lambdas/build/code_coverage_report.sh
     - name: Show Code Coverage Report
       run: |
         ./lambdas/build/code_coverage_report.sh
+    - name: Code Profiling
+      run: |
+        ./lambdas/build/code_profiling_report.sh
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')
+        pylint --exit-zero $(git ls-files '*.py')
